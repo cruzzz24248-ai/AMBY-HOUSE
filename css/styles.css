@@ -348,3 +348,7 @@ footer .f-bot{flex-direction:column;gap:.5rem;padding-top:1.2rem}}
 .bar .wrap{gap:.6rem}.bt{flex:none}.bt strong{font-size:1.05rem}.bt small{white-space:nowrap}
 .bar #next{flex:1 1 auto;min-width:0;padding:.85rem .6rem;font-size:.86rem}
 .bar .btn.g:not([hidden]){display:inline-flex}}
+
+/* por qué modular: 2 filas de 2 columnas */
+.why:not(#nc){grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:600px){.why:not(#nc){grid-template-columns:1fr}}

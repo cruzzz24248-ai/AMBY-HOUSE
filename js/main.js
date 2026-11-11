@@ -36,7 +36,7 @@ render=function(W,f){hh.innerHTML=houseSVG({hero:1,id:'h',m2:0,W:W,terra:f.t,woo
 flags=function(m){return{t:m.k==='c30t',w:m.k==='c30t'||m.k==='c90',p:m.k!=='c30t'}},
 grow=function(m,first){var a=curW,b=150+m.m2*3,f=flags(m),o=curF||f,t0=performance.now();curF=f;cancelAnimationFrame(raf);if(first||RM||!a){curW=b;render(b,f);return}
 (function st(t){var k=Math.min(1,(t-t0)/850),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;curW=a+(b-a)*e;render(curW,k<.4?o:f);if(k<1)raf=requestAnimationFrame(st)})(t0)},
-draw=function(k,first){var N=A.modelos.length;k=(k+N)%N;cur=k;var m=A.modelos[k];grow(m,first);$('#hn').textContent=m.id;$('#hm').innerHTML=m.m2+' m² · Desde <b>'+U.usd(U.from(m))+'</b> <span>+ IVA</span>';$('#hl').href='configurador.html?m='+m.k;
+draw=function(k,first){var N=A.modelos.length;k=(k+N)%N;cur=k;var m=A.modelos[k];grow(m,first);$('#hn').textContent=m.id;$('#hm').innerHTML=m.m2+' m² · Desde <b>'+U.usd(U.from(m))+'</b> <span>+ IVA</span>';$('#hl').href='modelo-'+m.k+'.html';
 [].forEach.call(pc.children,function(x,j){x.setAttribute('aria-pressed',j===k);if(j===k){var i=x.lastChild;i.style.animation='none';void i.offsetWidth;i.style.animation=''}});var el=pc.children[k];pc.scrollTo({left:Math.max(0,el.offsetLeft-(pc.clientWidth-el.offsetWidth)/2),behavior:first?'auto':'smooth'})};
 pc.innerHTML=A.modelos.map(function(m,k){return'<button type="button" data-k="'+k+'"><b>'+m.id+'</b><small>'+m.m2+' m²</small><i></i></button>'}).join('');
 pc.onclick=function(e){var x=e.target.closest('button');if(x)draw(+x.dataset.k)};
