@@ -366,8 +366,33 @@ html.i1p .top .brand,html.i1p .hero .eye,html.i1p .hero h1,html.i1p .hero .acts,
 /* lámparas: se apagan de día (queda el artefacto tenue) */
 #hv .lm{opacity:calc(.3 + var(--lit,1)*.7)}#hv .lh{opacity:var(--lit,1)}
 
-/* ===== hero: atardecer fijo (reemplaza el ciclo día/noche) ===== */
-section.hero{--s1:#25264f;--s2:#b05a60;--s3:#f8a95a;--mf:#6c4656;--mn:#2c2030;--lit:1;--day:.2;--st:.3;--ga:.5;--gk1:#4a3a48;--gk2:#140f18}
-.stars{-webkit-mask-image:linear-gradient(#000 20%,transparent 85%);mask-image:linear-gradient(#000 20%,transparent 85%)}
-.cl{height:36px;background:radial-gradient(closest-side,rgba(255,168,130,.85),transparent);opacity:.45}
+/* ===== hero: noche estrellada con bosque (negro, blanco y naranja de la marca) ===== */
+section.hero{--s1:#05060a;--s2:#0b0e15;--s3:#171b26;--lit:1;--day:.2;--st:.5;--ga:0;--gk1:#262d3d;--gk2:#0a0c12}
+.stars{-webkit-mask-image:linear-gradient(#000 25%,transparent 92%);mask-image:linear-gradient(#000 25%,transparent 92%)}
+.stars i{background:#fff}
+.moon{position:absolute;left:auto;right:13%;top:17%;width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 36% 34%,#fff,#e4e9f5 55%,#aab5cf);box-shadow:0 0 28px 8px rgba(190,205,240,.22),0 0 110px 40px rgba(140,160,215,.12)}
+.moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 70% 62%,rgba(120,132,165,.35) 0 12%,transparent 13%),radial-gradient(circle at 30% 70%,rgba(120,132,165,.25) 0 9%,transparent 10%)}
+@media(max-width:860px){.moon{left:auto;right:9%;top:14%;width:32px;height:32px}}
 .hero .eye{color:#fff}
+
+/* ===== recorrido de modelos a escala ===== */
+.rec{position:relative;margin-top:2rem;background:#05060a;border-block:1px solid var(--ln)}
+.rec-sc{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}
+.rec-sc::-webkit-scrollbar{display:none}.rec-sc:active{cursor:grabbing}.rec-sc svg{display:block;max-width:none;user-select:none}
+.rm{cursor:pointer;outline:none;scroll-snap-align:center}.rm .rsp{opacity:0;transition:opacity .5s}.rm.on .rsp{opacity:1}
+.rl{font:700 16px var(--f);fill:#a5a8b3;transition:fill .3s}.rs{font:400 12px var(--f);fill:#6f727d}
+.rm.on .rl{fill:var(--o)}.rm.on .rs{fill:#fff}.rm:hover .rl,.rm:focus-visible .rl{fill:#fff}.rm:focus-visible .rsp{opacity:1}
+.rec::before,.rec::after{content:"";position:absolute;top:0;bottom:0;width:56px;z-index:2;pointer-events:none}
+.rec::before{left:0;background:linear-gradient(90deg,#05060a,transparent)}.rec::after{right:0;background:linear-gradient(270deg,#05060a,transparent)}
+.rec-b{position:absolute;top:42%;z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(8,8,10,.85);color:#fff;font:400 1.7rem/1 var(--f);cursor:pointer;display:grid;place-items:center;padding:0 0 .2rem;transition:border-color .25s,background .25s}
+.rec-b:hover{border-color:var(--o);background:#000}.rec-b.l{left:16px}.rec-b.r{right:16px}.rec-b[hidden]{display:none}
+.rdp{margin-top:2.2rem}.rdp-i{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(1.4rem,4vw,3.2rem);align-items:center;animation:pop .5s var(--e)}
+.rdp-im{display:block;position:relative;border-radius:8px;overflow:hidden;aspect-ratio:5/4;border:1px solid var(--ln)}.rdp-im img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--e)}.rdp-im:hover img{transform:scale(1.04)}
+.rdp-t h3{font-size:clamp(2.2rem,4.5vw,3rem);font-weight:700;letter-spacing:-.03em;display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap}.rdp-t h3 small{font-size:1rem;font-weight:500;color:var(--m);letter-spacing:0}
+.rdp-t .lead{margin:.6rem 0 0;max-width:46ch}.rdp-t ul{list-style:none;padding:0;margin:1.1rem 0 1.2rem;display:flex;flex-wrap:wrap;gap:.5rem}.rdp-t li{font-size:.88rem;color:var(--m);border:1px solid var(--ln);border-radius:99px;padding:.35rem .85rem}
+.rdp-t .acts{gap:.6rem}.rdp-ns{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;list-style:none;padding:0}
+@media(max-width:720px){.rdp-i{grid-template-columns:1fr}.rec-b{width:40px;height:40px}.rec::before,.rec::after{width:30px}}
+/* proceso de noche: las luces se prenden recién en la entrega */
+.sc .gl,.sc .lm,.sc .lh{animation:none!important;opacity:0;transition:opacity 1.2s}
+.sc.lit .gl,.sc.lit .lm,.sc.lit .lh{opacity:1}
+.stage .hs{border-radius:6px}
