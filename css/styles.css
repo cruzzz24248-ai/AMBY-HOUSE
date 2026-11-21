@@ -365,3 +365,9 @@ html.i1p .top .brand,html.i1p .hero .eye,html.i1p .hero h1,html.i1p .hero .acts,
 
 /* lámparas: se apagan de día (queda el artefacto tenue) */
 #hv .lm{opacity:calc(.3 + var(--lit,1)*.7)}#hv .lh{opacity:var(--lit,1)}
+
+/* ===== hero: atardecer fijo (reemplaza el ciclo día/noche) ===== */
+section.hero{--s1:#25264f;--s2:#b05a60;--s3:#f8a95a;--mf:#6c4656;--mn:#2c2030;--lit:1;--day:.2;--st:.3;--ga:.5;--gk1:#4a3a48;--gk2:#140f18}
+.stars{-webkit-mask-image:linear-gradient(#000 20%,transparent 85%);mask-image:linear-gradient(#000 20%,transparent 85%)}
+.cl{height:36px;background:radial-gradient(closest-side,rgba(255,168,130,.85),transparent);opacity:.45}
+.hero .eye{color:#fff}
