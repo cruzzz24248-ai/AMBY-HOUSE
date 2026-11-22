@@ -30,7 +30,7 @@ etapas:[['Descubrimiento','Relevamos tu necesidad','Definimos objetivo, uso, sup
 nec:[['Terreno',['Ubicación y acceso','Medidas y condiciones','Fotos o video']],['Servicios',['Luz, agua y gas (si aplica)','Puntos de conexión','Alternativas: solar, tanque']],['Permisos',['Municipio o comuna','Requisitos de base','Documentación solicitada']]],
 faq:[['¿Necesito platea o fundación sí o sí?','Depende del terreno, el modelo y la normativa local. Puede ser platea, pilotes o una solución equivalente, y se define en la etapa técnica.'],
 ['¿Cómo se manejan las instalaciones?','En fábrica se dejan listas las canalizaciones y los puntos internos; en el terreno se conectan a la acometida. Si no hay servicios, se evalúan alternativas.'],
-['¿Cuánto tarda todo el proceso?','El objetivo es 60 a 90 días. Varía según modelo, permisos, base y logística, y la cotización incluye un cronograma estimativo.'],
+['¿Cuánto tarda todo el proceso?','El objetivo es 60 días. Puede variar según modelo, permisos, base y logística, y la cotización incluye un cronograma estimativo.'],
 ['¿Se puede personalizar?','Sí. Se trabaja un anteproyecto para cerrar layout y estética, y luego se congela lo necesario para fabricar sin retrabajos.'],
 ['¿Qué pasa el día del montaje?','Se coordina el acceso y la grúa, se posiciona y nivela el módulo, se conectan los servicios y se entrega con checklist.']]};
 window.AH.renta={ocup:55,costos:30,obra:8000,noche:{c15:45,c30:70,c30t:85,c36:80,c45:95,c60:120,c90:150}};/* SUPUESTOS DE EJEMPLO: validar con Mariano (tarifas por noche, ocupación, costos y obra civil por módulo) */
